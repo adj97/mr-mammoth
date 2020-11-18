@@ -1,0 +1,19 @@
+{
+  "TableName": "Tips",
+  "ProvisionedThroughput": {
+    "ReadCapacityUnits": 5,
+    "WriteCapacityUnits": 5
+  },
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "TipId",
+      "AttributeType": "N"
+    }
+  ],
+  "KeySchema": [
+    {
+      "AttributeName": "TipId",
+      "KeyType": "HASH"
+    }
+  ]
+}

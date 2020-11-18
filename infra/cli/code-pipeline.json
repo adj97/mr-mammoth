@@ -1,0 +1,91 @@
+{
+  "pipeline": {
+      "name": "MythicalMysfitsServiceCICDPipeline",
+      "roleArn": "arn:aws:iam::803198922883:role/MythicalMysfitsServiceCodePipelineServiceRole",
+      "stages": [
+        {
+          "name": "Source",
+          "actions": [
+            {
+              "inputArtifacts": [
+    
+              ],
+              "name": "Source",
+              "actionTypeId": {
+                "category": "Source",
+                "owner": "AWS",
+                "version": "1",
+                "provider": "CodeCommit"
+              },
+              "outputArtifacts": [
+                {
+                  "name": "MammothService-SourceArtifact"
+                }
+              ],
+              "configuration": {
+                "BranchName": "master",
+                "RepositoryName": "MammothService-Repository"
+              },
+              "runOrder": 1
+            }
+          ]
+        },
+        {
+          "name": "Build",
+          "actions": [
+            {
+              "name": "Build",
+              "actionTypeId": {
+                "category": "Build",
+                "owner": "AWS",
+                "version": "1",
+                "provider": "CodeBuild"
+              },
+              "outputArtifacts": [
+                {
+                  "name": "MammothService-BuildArtifact"
+                }
+              ],
+              "inputArtifacts": [
+                {
+                  "name": "MammothService-SourceArtifact"
+                }
+              ],
+              "configuration": {
+                "ProjectName": "MammothCodeBuildProject"
+              },
+              "runOrder": 1
+            }
+          ]
+        },
+        {
+          "name": "Deploy",
+          "actions": [
+            {
+              "name": "Deploy",
+              "actionTypeId": {
+                "category": "Deploy",
+                "owner": "AWS",
+                "version": "1",
+                "provider": "ECS"
+              },
+              "inputArtifacts": [
+                {
+                  "name": "MammothService-BuildArtifact"
+                }
+              ],
+              "configuration": {
+                "ClusterName": "MythicalMysfits-Cluster",
+                "ServiceName": "MythicalMysfits-Service",
+                "FileName": "imagedefinitions.json"
+              }
+            }
+          ]
+        }
+      ],
+      "artifactStore": {
+        "type": "S3",
+        "location": "mammoth645pipelineartefacts"
+      }
+  }
+}

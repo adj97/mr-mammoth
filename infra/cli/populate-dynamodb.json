@@ -1,0 +1,37 @@
+{
+      "Tips" : [
+         {
+            "PutRequest": {
+               "Item": {
+                  "TipId" : {
+                     "N": "1"
+                  },
+                  "Date" : {
+                     "S": "test"
+                  },
+                  "HorseName" : {
+                     "S": "test"
+                  },
+                  "Bet" : {
+                     "S": "test"
+                  },
+                  "Stake" : {
+                     "S": "test"
+                  },
+                  "Odds" : {
+                     "S": "test"
+                  },
+                  "Returns" : {
+                     "S": "test"
+                  },
+                  "PL" : {
+                     "S": "test"
+                  },
+                  "CPL" : {
+                     "S": "test"
+                  }
+               }
+            }
+         }
+      ]
+   }

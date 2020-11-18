@@ -1,0 +1,32 @@
+{
+  "family": "mythicalmysfitsservice",
+  "cpu": "256",
+  "memory": "512",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "executionRoleArn": "arn:aws:iam::803198922883:role/MammothCoreStack-EcsServiceRole-1415AIH6W31NK",
+  "taskRoleArn": "arn:aws:iam::803198922883:role/MammothCoreStack-ECSTaskRole-1VLSVS1MH8GIN",
+  "containerDefinitions": [
+    {
+      "name": "MythicalMysfits-Service",
+      "image": "803198922883.dkr.ecr.eu-west-1.amazonaws.com/mythicalmysfits/service:latest",
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "http"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "mythicalmysfits-logs",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "awslogs-mythicalmysfits-service"
+        }
+      },
+      "essential": true
+    }
+  ]
+}
