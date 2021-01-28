@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--
-    A new version of the Mythical Mysfits website that has enabled user
-    registration and login, as well as the ability to logged in users to like
-    and mark mysfits as adopted.
-  -->
   <head>
     <title>Mr Mammoth</title>
     <meta charset="utf-8">
@@ -27,11 +22,12 @@
       }
     </style>
     <br>
+    <!-- <div style="text-align: center"> -->
+       <!-- <h3>Mr Mammoth</h3> -->
+    <!-- </div> -->
     <div style="text-align: center">
-       <strong>Mr Mammoth</strong>
-    </div>
-    <div style="text-align: center">
-      <img src="https://static.thenounproject.com/png/1423062-200.png" width="200px" align="center">
+      <!-- <img src="https://static.thenounproject.com/png/1423062-200.png" width="200px" align="center"> -->
+	  <img src="https://pbs.twimg.com/profile_images/1336795874257670146/GhBoJJ0m_400x400.jpg" width="200px" align="center">
     </div>
     <div class="container">
         <div class='btn-toolbar float-right'>
@@ -44,6 +40,7 @@
         <div class="modal-content">
           <!-- Modal Header -->
           <div class="modal-header">
+			<h3>Login</h3>
             <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span>
@@ -57,8 +54,10 @@
             <input type="password" id="pwd" name="pwd" placeholder="Password" />
             <input type="submit" id="login-modal-button" name="login" class="btn btn-info" value="Login"/ >
           </form>
+		  <hr>
           <div class="login-help">
-            <a href="register.html">Register</a>
+			New to MrMammoth?
+			<a href="register">Create an account.</a>
           </div>
         </div>
       </div>
@@ -82,6 +81,87 @@
       </div>
     </div>
     <br>
+	<div class="container">
+		<table class="table" style="width:100%" align="center">
+			<tr>
+				<th>Tipping Date</th>
+				<th>Race Date</th>
+				<th>Horse</th>
+				<th>Bet</th>
+				<th>Total Stake (pts)</th>
+				<th>Odds</th>
+				<th>Returns</th>
+				<th>P&amp;L</th>
+				<th>C-P&amp;L</th>
+			</tr>
+			<tr>
+				<td>20-Jun</td>
+				<td>20-Jun</td>
+				<td>Jersey Wonder</td>
+				<td>0.5pt EW</td>
+				<td>1</td>
+				<td>34</td>
+				<td>3.8</td>
+				<td>2.8</td>
+				<td>2.8</td>
+			</tr>
+			<tr>
+				<td>22-Jun</td>
+				<td>22-Jun</td>
+				<td>Waterfall</td>
+				<td>0.5pt EW</td>
+				<td>1</td>
+				<td>26</td>
+				<td>0</td>
+				<td>-1</td>
+				<td>1.8</td>
+			</tr>
+			<tr>
+				<td>22-Jun</td>
+				<td>22-Jun</td>
+				<td>Queen's Gift</td>
+				<td>1pt Win</td>
+				<td>1</td>
+				<td>3.25</td>
+				<td>0</td>
+				<td>-1</td>
+				<td>0.8</td>
+			</tr>
+						<tr>
+				<td>20-Jun</td>
+				<td>20-Jun</td>
+				<td>Jersey Wonder</td>
+				<td>0.5pt EW</td>
+				<td>1</td>
+				<td>34</td>
+				<td>3.8</td>
+				<td>2.8</td>
+				<td>2.8</td>
+			</tr>
+			<tr>
+				<td>22-Jun</td>
+				<td>22-Jun</td>
+				<td>Waterfall</td>
+				<td>0.5pt EW</td>
+				<td>1</td>
+				<td>26</td>
+				<td>0</td>
+				<td>-1</td>
+				<td>1.8</td>
+			</tr>
+			<tr>
+				<td>22-Jun</td>
+				<td>22-Jun</td>
+				<td>Queen's Gift</td>
+				<td>1pt Win</td>
+				<td>1</td>
+				<td>3.25</td>
+				<td>0</td>
+				<td>-1</td>
+				<td>0.8</td>
+			</tr>
+		</table>
+	</div>
     <div class="container">
       <div id="mysfitsGrid" class="row" ng-controller="mysfitsListController">
         <div class="col-md-4 border border-warning" ng-repeat="mysfit in mysfits">
